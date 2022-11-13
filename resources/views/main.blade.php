@@ -24,4 +24,9 @@
     <a href="{{ route('assignments.create') }}">Crear Materia</a>
     <a href="{{ route('assignments.index') }}">Mostrar Materias</a>
 </div>
+
+<div>
+    <a href="{{ route('sections.create') }}">Crear Seccion</a>
+    <a href="{{ route('sections.index') }}">Mostrar Secciones</a>
+</div>
 @endsection

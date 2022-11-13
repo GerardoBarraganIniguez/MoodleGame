@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DegreeController;
+use App\Http\Controllers\SectionController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\AssignmentController;
@@ -52,3 +53,11 @@ Route::post('/teachers',[TeacherController::class, 'store'])->name('teachers.sto
 Route::get('/teachers/{teacher}/edit',[TeacherController::class, 'edit'])->name('teachers.edit');
 Route::patch('/teachers/{teacher}',[TeacherController::class, 'update'])->name('teachers.update');
 Route::delete('/teachers/{teacher}',[TeacherController::class, 'destroy'])->name('teachers.destroy');
+
+//sections
+Route::get('/sections',[SectionController::class, 'index'])->name('sections.index');
+Route::get('/sections/create',[SectionController::class, 'create'])->name('sections.create');
+Route::post('/sections',[SectionController::class, 'store'])->name('sections.store');
+Route::get('/sections/{section}/edit',[SectionController::class, 'edit'])->name('sections.edit');
+Route::patch('/sections/{section}',[SectionController::class, 'update'])->name('sections.update');
+Route::delete('/sections/{section}',[SectionController::class, 'destroy'])->name('sections.destroy');
