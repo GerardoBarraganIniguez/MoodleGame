@@ -1,11 +1,11 @@
 @extends('layout.app')
 
 @section('title')
-    Crear Materia
+    Crear tarea clase: <i>{{ $classroom->id }}</i>
 @endsection
 
 @section('content')
-    <form action="{{ route('assignments.store') }}" method="POST" autocomplete="off">
+    <form action="{{ route('assignments.store', $classroom) }}" method="POST" autocomplete="off">
         <x-assignment-form-body/>
         <input type="submit" value="Crear">
     </form>

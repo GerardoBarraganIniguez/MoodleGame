@@ -10,6 +10,8 @@ class Assignment extends Model
     use HasFactory;
 
     protected $fillable = [
-        'name'
+        'classroom_id',
+        'name',
+        'description'
     ];
 }

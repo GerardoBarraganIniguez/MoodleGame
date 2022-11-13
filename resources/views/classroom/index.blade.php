@@ -16,6 +16,7 @@
                 <td>{{ $classroom->subject->name }}</td>
                 <td>{{ $classroom->section->name }}</td>
                 <td>{{ $classroom->teacher->name}}</td>
+                <td><a href="{{ route('assignments.create', $classroom) }}">Crear Tarea</a></td>
                 <td><a href="{{ route('classrooms.edit', $classroom) }}">Editar Clase</a></td>
                 <td>
                     <form action="{{ route('classrooms.destroy', $classroom) }}" method="POST" autocomplete="off">

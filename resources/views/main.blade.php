@@ -34,4 +34,8 @@
     <a href="{{ route('classrooms.create') }}">Crear Clase</a>
     <a href="{{ route('classrooms.index') }}">Mostrar Clases</a>
 </div>
+
+<div>
+    <td><a href="{{ route('assignments.index') }}">Mostrar Tareas</a></td>
+</div>
 @endsection

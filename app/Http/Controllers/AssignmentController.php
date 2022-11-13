@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Classroom;
 use App\Models\Assignment;
 use Illuminate\Http\Request;
 
@@ -13,19 +14,22 @@ class AssignmentController extends Controller
         return view('assignment.index', compact('assignments'));
     }
 
-    public function create()
+    public function create(Classroom $classroom)
     {
-        return view('assignment.create');
+        return view('assignment.create', compact('classroom'));
     }
 
-    public function store(Request $request)
+    public function store(Classroom $classroom, Request $request)
     {
         $this->validate($request,[
-            'name' => 'required'
+            'name' => 'required',
+            'description' => 'required'
         ]);
 
         Assignment::create([
-            'name' => $request->name
+            'classroom_id' => $classroom->id,
+            'name' => $request->name,
+            'description' => $request->description,
         ]);
 
         return redirect()->route('assignments.index');
@@ -36,14 +40,16 @@ class AssignmentController extends Controller
         return view('assignment.edit', compact('assignment'));
     }
 
-    public function update(Request $request, Assignment $assignment)
+    public function update(Assignment $assignment, Request $request)
     {
         $this->validate($request,[
-            'name' => 'required'
+            'name' => 'required',
+            'description' => 'required'
         ]);
 
         $assignment->update([
-            'name' => $request->name
+            'name' => $request->name,
+            'description' => $request->description
         ]);
 
         return redirect()->route('assignments.index');

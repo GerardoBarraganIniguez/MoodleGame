@@ -7,6 +7,7 @@ use App\Http\Controllers\StudentController;
 use App\Http\Controllers\SubjectController;
 use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\ClassroomController;
+use App\Http\Controllers\AssignmentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -70,3 +71,11 @@ Route::post('/classrooms',[ClassroomController::class, 'store'])->name('classroo
 Route::get('/classrooms/{classroom}/edit',[ClassroomController::class, 'edit'])->name('classrooms.edit');
 Route::patch('/classrooms/{classroom}',[ClassroomController::class, 'update'])->name('classrooms.update');
 Route::delete('/classrooms/{classroom}',[ClassroomController::class, 'destroy'])->name('classrooms.destroy');
+
+//assignments
+Route::get('/assignments',[AssignmentController::class, 'index'])->name('assignments.index');
+Route::get('/assignments/{classroom}/create',[AssignmentController::class, 'create'])->name('assignments.create');
+Route::post('/assignments/{classroom}',[AssignmentController::class, 'store'])->name('assignments.store');
+Route::get('/assignments/{assignment}/edit',[AssignmentController::class, 'edit'])->name('assignments.edit');
+Route::patch('/assignments/{assignment}',[AssignmentController::class, 'update'])->name('assignments.update');
+Route::delete('/assignments/{assignment}',[AssignmentController::class, 'destroy'])->name('assignments.destroy');

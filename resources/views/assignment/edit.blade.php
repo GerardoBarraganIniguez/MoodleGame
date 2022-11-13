@@ -1,7 +1,7 @@
 @extends('layout.app')
 
 @section('title')
-    Editar Materia <i>{{ $assignment->name }}</i>
+    Editar tarea <i>{{ $assignment->name }}</i>
 @endsection
 
 @section('content')
