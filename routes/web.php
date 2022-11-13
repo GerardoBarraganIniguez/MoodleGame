@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DegreeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +15,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('main');
 });
+
+//degrees
+Route::get('/degrees',[DegreeController::class, 'index'])->name('degrees.index');
+Route::get('/degrees/create',[DegreeController::class, 'create'])->name('degrees.create');
+Route::post('/degrees',[DegreeController::class, 'store'])->name('degrees.store');
+Route::get('/degrees/{degree}/edit',[DegreeController::class, 'edit'])->name('degrees.edit');
+Route::patch('/degrees/{degree}',[DegreeController::class, 'update'])->name('degrees.update');
+Route::delete('/degrees/{degree}',[DegreeController::class, 'destroy'])->name('degrees.destroy');
