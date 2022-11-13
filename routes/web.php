@@ -4,8 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DegreeController;
 use App\Http\Controllers\SectionController;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\SubjectController;
 use App\Http\Controllers\TeacherController;
-use App\Http\Controllers\AssignmentController;
+use App\Http\Controllers\ClassroomController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,13 +39,13 @@ Route::get('/students/{student}/edit',[StudentController::class, 'edit'])->name(
 Route::patch('/students/{student}',[StudentController::class, 'update'])->name('students.update');
 Route::delete('/students/{student}',[StudentController::class, 'destroy'])->name('students.destroy');
 
-//assignments
-Route::get('/assignments',[AssignmentController::class, 'index'])->name('assignments.index');
-Route::get('/assignments/create',[AssignmentController::class, 'create'])->name('assignments.create');
-Route::post('/assignments',[AssignmentController::class, 'store'])->name('assignments.store');
-Route::get('/assignments/{assignment}/edit',[AssignmentController::class, 'edit'])->name('assignments.edit');
-Route::patch('/assignments/{assignment}',[AssignmentController::class, 'update'])->name('assignments.update');
-Route::delete('/assignments/{assignment}',[AssignmentController::class, 'destroy'])->name('assignments.destroy');
+//subjects
+Route::get('/subjects',[SubjectController::class, 'index'])->name('subjects.index');
+Route::get('/subjects/create',[SubjectController::class, 'create'])->name('subjects.create');
+Route::post('/subjects',[SubjectController::class, 'store'])->name('subjects.store');
+Route::get('/subjects/{subject}/edit',[SubjectController::class, 'edit'])->name('subjects.edit');
+Route::patch('/subjects/{subject}',[SubjectController::class, 'update'])->name('subjects.update');
+Route::delete('/subjects/{subject}',[SubjectController::class, 'destroy'])->name('subjects.destroy');
 
 //teachers
 Route::get('/teachers',[TeacherController::class, 'index'])->name('teachers.index');
@@ -61,3 +62,11 @@ Route::post('/sections',[SectionController::class, 'store'])->name('sections.sto
 Route::get('/sections/{section}/edit',[SectionController::class, 'edit'])->name('sections.edit');
 Route::patch('/sections/{section}',[SectionController::class, 'update'])->name('sections.update');
 Route::delete('/sections/{section}',[SectionController::class, 'destroy'])->name('sections.destroy');
+
+//classrooms
+Route::get('/classrooms',[ClassroomController::class, 'index'])->name('classrooms.index');
+Route::get('/classrooms/create',[ClassroomController::class, 'create'])->name('classrooms.create');
+Route::post('/classrooms',[ClassroomController::class, 'store'])->name('classrooms.store');
+Route::get('/classrooms/{classroom}/edit',[ClassroomController::class, 'edit'])->name('classrooms.edit');
+Route::patch('/classrooms/{classroom}',[ClassroomController::class, 'update'])->name('classrooms.update');
+Route::delete('/classrooms/{classroom}',[ClassroomController::class, 'destroy'])->name('classrooms.destroy');
