@@ -19,4 +19,9 @@
     <a href="{{ route('teachers.create') }}">Crear Maestro</a>
     <a href="{{ route('teachers.index') }}">Mostrar Maestros</a>
 </div>
+
+<div>
+    <a href="{{ route('assignments.create') }}">Crear Materia</a>
+    <a href="{{ route('assignments.index') }}">Mostrar Materias</a>
+</div>
 @endsection

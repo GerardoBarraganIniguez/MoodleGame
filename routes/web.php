@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DegreeController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TeacherController;
+use App\Http\Controllers\AssignmentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,6 +38,12 @@ Route::patch('/students/{student}',[StudentController::class, 'update'])->name('
 Route::delete('/students/{student}',[StudentController::class, 'destroy'])->name('students.destroy');
 
 //assignments
+Route::get('/assignments',[AssignmentController::class, 'index'])->name('assignments.index');
+Route::get('/assignments/create',[AssignmentController::class, 'create'])->name('assignments.create');
+Route::post('/assignments',[AssignmentController::class, 'store'])->name('assignments.store');
+Route::get('/assignments/{assignment}/edit',[AssignmentController::class, 'edit'])->name('assignments.edit');
+Route::patch('/assignments/{assignment}',[AssignmentController::class, 'update'])->name('assignments.update');
+Route::delete('/assignments/{assignment}',[AssignmentController::class, 'destroy'])->name('assignments.destroy');
 
 //teachers
 Route::get('/teachers',[TeacherController::class, 'index'])->name('teachers.index');
