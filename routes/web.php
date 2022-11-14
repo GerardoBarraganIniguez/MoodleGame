@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ExamController;
 use App\Http\Controllers\DegreeController;
 use App\Http\Controllers\SectionController;
 use App\Http\Controllers\StudentController;
@@ -79,3 +80,11 @@ Route::post('/assignments/{classroom}',[AssignmentController::class, 'store'])->
 Route::get('/assignments/{assignment}/edit',[AssignmentController::class, 'edit'])->name('assignments.edit');
 Route::patch('/assignments/{assignment}',[AssignmentController::class, 'update'])->name('assignments.update');
 Route::delete('/assignments/{assignment}',[AssignmentController::class, 'destroy'])->name('assignments.destroy');
+
+//exams
+Route::get('/exams',[ExamController::class, 'index'])->name('exams.index');
+Route::get('/exams/{classroom}/create',[ExamController::class, 'create'])->name('exams.create');
+Route::post('/exams/{classroom}',[ExamController::class, 'store'])->name('exams.store');
+Route::get('/exams/{exam}/edit',[ExamController::class, 'edit'])->name('exams.edit');
+Route::patch('/exams/{exam}',[ExamController::class, 'update'])->name('exams.update');
+Route::delete('/exams/{exam}',[ExamController::class, 'destroy'])->name('exams.destroy');
