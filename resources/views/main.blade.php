@@ -42,4 +42,8 @@
 <div>
     <td><a href="{{ route('exams.index') }}">Mostrar Examenes</a></td>
 </div>
+
+<div>
+    <td><a href="{{ route('classrooms_students.index') }}">Mostrar Alumno-Clase</a></td>
+</div>
 @endsection

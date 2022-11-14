@@ -26,6 +26,7 @@
                         <input type="submit" value="Eliminar">
                     </form>
                 </td>
+                <td><a href="{{ route('classrooms_students.create', $student) }}">Unirse a clase</a></td>
             </tr>
         @endforeach
     </table>

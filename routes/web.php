@@ -9,6 +9,7 @@ use App\Http\Controllers\SubjectController;
 use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\ClassroomController;
 use App\Http\Controllers\AssignmentController;
+use App\Http\Controllers\ClassroomStudentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -88,3 +89,8 @@ Route::post('/exams/{classroom}',[ExamController::class, 'store'])->name('exams.
 Route::get('/exams/{exam}/edit',[ExamController::class, 'edit'])->name('exams.edit');
 Route::patch('/exams/{exam}',[ExamController::class, 'update'])->name('exams.update');
 Route::delete('/exams/{exam}',[ExamController::class, 'destroy'])->name('exams.destroy');
+
+//Student-Classroom
+Route::get('/classrooms-students',[ClassroomStudentController::class, 'index'])->name('classrooms_students.index');
+Route::get('/classrooms-students/{student}/create',[ClassroomStudentController::class, 'create'])->name('classrooms_students.create');
+Route::post('/classrooms-students/{student}',[ClassroomStudentController::class, 'store'])->name('classrooms_students.store');
